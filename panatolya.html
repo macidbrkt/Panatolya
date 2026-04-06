@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panatolya Chemicals & Pharmaceuticals</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Barlow:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #162240;
+    --teal: #1a7a6e;
+    --teal-light: #25a899;
+    --gold: #c9a84c;
+    --gold-light: #e8c76a;
+    --cream: #f7f4ef;
+    --off-white: #fdfcfa;
+    --text-dark: #1a1a1a;
+    --text-mid: #444;
+    --text-muted: #777;
+    --border: rgba(201,168,76,0.2);
+    --section-pad: 90px 0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  body[lang="ar"] {
+    font-family: 'Amiri', 'Barlow', sans-serif;
+    direction: rtl;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    padding: 0 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .nav-logo {
+    height: 75px;
+    object-fit: contain;
+  }
+
+  .nav-links {
+    display: flex; gap: 32px; align-items: center;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s, border-bottom 0.2s;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .nav-links a:hover, .nav-links a.active { 
+    color: var(--gold-light); 
+    border-bottom: 2px solid var(--gold-light);
+  }
+
+  .lang-switcher {
+    display: flex; gap: 4px; align-items: center;
+  }
+
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: rgba(255,255,255,0.6);
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 5px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .lang-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+  .lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    min-height: calc(100vh - 72px);
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: 
+      linear-gradient(135deg, rgba(26,122,110,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: 
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative; z-index: 1;
+    max-width: 1200px; margin: 0 auto; padding: 80px 48px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+
+  .hero-eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  h1.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  h1.hero-title em {
+    font-style: normal;
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  .hero-desc {
+    color: rgba(255,255,255,0.62);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .hero-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .stat-block {
+    background: rgba(10,22,40,0.8);
+    padding: 32px 28px;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .stat-block:hover { background: rgba(22,34,64,0.9); }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ── SECTIONS SHARED ── */
+  .container {
+    max-width: 1200px; margin: 0 auto; padding: 0 48px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .section-eyebrow {
+    color: var(--teal);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h2.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .divider {
+    width: 48px; height: 2px;
+    background: var(--gold);
+    margin: 20px auto 0;
+  }
+
+  /* ── INDUSTRIES ── */
+  .industries {
+    padding: var(--section-pad);
+    background: var(--cream);
+  }
+
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(26,122,110,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .industry-card {
+    background: var(--off-white);
+    padding: 40px 32px;
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 16px;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .industry-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .industry-card:hover { background: #fff; transform: translateY(-2px); }
+  .industry-card:hover::after { transform: scaleX(1); }
+
+  .industry-icon {
+    width: 44px; height: 44px;
+    background: rgba(26,122,110,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .industry-icon svg { width: 22px; height: 22px; stroke: var(--teal); fill: none; stroke-width: 1.5; }
+
+  .industry-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .industry-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: var(--section-pad);
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,122,110,0.12) 0%, transparent 70%);
+  }
+
+  .services .section-title { color: #fff; }
+  .services .section-eyebrow { color: var(--gold); }
+
+  .services-list {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px; overflow: hidden;
+  }
+
+  .service-item {
+    background: rgba(10,22,40,0.7);
+    padding: 36px 32px;
+    border-left: 3px solid transparent;
+    transition: all 0.25s;
+  }
+
+  .service-item:hover {
+    background: rgba(22,34,64,0.9);
+    border-left-color: var(--teal-light);
+  }
+
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: rgba(201,168,76,0.3);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .service-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: var(--section-pad);
+    background: var(--off-white);
+    min-height: calc(100vh - 72px);
+  }
+
+  .about-grid {
+    display: grid; grid-template-columns: 5fr 4fr; gap: 80px; align-items: start;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .about-text strong {
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .about-info {
+    background: var(--navy);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .about-info-header {
+    background: var(--teal);
+    padding: 20px 28px;
+  }
+
+  .about-info-header p {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+
+  .about-info-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .about-info-body {
+    padding: 28px;
+  }
+
+  .info-row {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .info-row:last-child { border-bottom: none; }
+
+  .info-icon {
+    width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .info-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  .info-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 2px;
+  }
+
+  .info-value {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ── VISION ── */
+  .vision {
+    padding: var(--section-pad);
+    background: var(--cream);
+    min-height: calc(100vh - 72px);
+  }
+
+  .vision-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+
+  .vision-card {
+    position: relative;
+    padding: 48px 40px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .vision-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--teal);
+  }
+
+  .vision-card.mission::before { background: var(--gold); }
+
+  .vision-tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  .vision-card.mission .vision-tag { color: var(--gold); }
+
+  .vision-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 400;
+    color: var(--navy); margin-bottom: 20px;
+  }
+
+  .vision-card p {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.8; font-weight: 300;
+  }
+
+  /* ── GROUP ── */
+  .group {
+    padding: var(--section-pad);
+    background: var(--off-white);
+    min-height: calc(100vh - 72px);
+  }
+
+  .companies-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    margin-top: 48px;
+  }
+
+  .company-card {
+    background: #fff;
+    border: 1px solid rgba(26,122,110,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+
+  .company-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(26,122,110,0.1);
+  }
+
+  .company-card-header {
+    background: var(--navy);
+    padding: 28px 28px 20px;
+  }
+
+  .company-flag {
+    font-size: 20px; margin-bottom: 10px;
+  }
+
+  .company-card-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 400;
+    color: #fff; margin-bottom: 4px;
+  }
+
+  .company-card-header .company-type {
+    font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .company-card-body {
+    padding: 24px 28px;
+  }
+
+  .company-location {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--teal);
+    font-weight: 600; margin-bottom: 16px;
+    letter-spacing: 0.06em;
+  }
+
+  .company-location svg { width: 12px; height: 12px; stroke: var(--teal); fill: none; stroke-width: 2; }
+
+  .company-card-body p {
+    font-size: 13px; color: var(--text-muted);
+    line-height: 1.7; font-weight: 300;
+  }
+
+  /* ── PRODUCTS ── */
+  .products {
+    padding: var(--section-pad);
+    background: var(--navy-mid);
+    position: relative;
+    min-height: calc(100vh - 72px);
+  }
+
+  .products .section-title { color: #fff; }
+  .products .section-eyebrow { color: var(--gold); }
+  .products .divider { background: var(--gold); }
+
+  .product-pills {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    justify-content: center;
+    margin-top: 48px;
+  }
+
+  .pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    color: rgba(255,255,255,0.75);
+    font-size: 13px; font-weight: 500;
+    padding: 10px 24px; border-radius: 2px;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+
+  .pill:hover {
+    background: rgba(201,168,76,0.1);
+    border-color: var(--gold);
+    color: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: var(--section-pad);
+    background: var(--cream);
+    min-height: calc(100vh - 72px);
+  }
+
+  .contact-inner {
+    background: var(--navy);
+    border-radius: 6px;
+    overflow: hidden;
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-info {
+    padding: 60px 48px;
+    background: var(--teal);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .contact-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300;
+    color: #fff; margin-bottom: 32px;
+  }
+
+  .contact-detail {
+    display: flex; align-items: flex-start; gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .contact-detail svg { width: 18px; height: 18px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 1.5; flex-shrink: 0; margin-top: 3px; }
+
+  .contact-detail-content p:first-child {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-bottom: 4px;
+  }
+
+  .contact-detail-content a,
+  .contact-detail-content p:last-child {
+    color: rgba(255,255,255,0.9); font-size: 15px;
+    text-decoration: none;
+  }
+
+  .contact-detail-content a:hover { color: var(--gold-light); }
+
+  .contact-form-area {
+    padding: 60px 48px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .contact-form-area p {
+    font-size: 13px; color: rgba(255,255,255,0.5);
+    line-height: 1.8; margin-bottom: 28px;
+  }
+
+  .contact-links {
+    display: flex; flex-direction: column; gap: 16px;
+  }
+
+  .contact-link-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: rgba(255,255,255,0.75);
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 14px 24px; border-radius: 2px;
+    text-decoration: none; cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .contact-link-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.06);
+  }
+
+  .contact-link-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    padding: 32px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  footer img { height: 36px; filter: brightness(0.7); }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── RTL Adjustments ── */
+  [dir="rtl"] .hero-eyebrow::before { display: none; }
+  [dir="rtl"] .hero-eyebrow::after {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+  [dir="rtl"] .service-item {
+    border-left: none;
+    border-right: 3px solid transparent;
+  }
+  [dir="rtl"] .service-item:hover { border-right-color: var(--teal-light); }
+  [dir="rtl"] .vision-card::before { left: auto; right: 0; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-content { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; }
+    .hero-stats { grid-template-columns: repeat(4, 1fr); }
+    .container { padding: 0 20px; }
+    .industry-grid { grid-template-columns: 1fr 1fr; }
+    .services-list { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .vision-grid { grid-template-columns: 1fr; }
+    .companies-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+
+  /* ── PAGE SWITCHING LOGIC ── */
+  .page-section { display: none; }
+  .page-section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" data-target="home" class="nav-brand">
+    <img class="nav-logo" src="images/panatolya_logo.png" alt="Panatolya Logo">
+  </a>
+
+  <ul class="nav-links">
+    <li><a data-target="home" class="active" data-i18n="nav_home">Home</a></li>
+    <li><a data-target="about" data-i18n="nav_about">About Us</a></li>
+    <li><a data-target="vision" data-i18n="nav_vision">Vision</a></li>
+    <li><a data-target="group" data-i18n="nav_group">Group</a></li>
+    <li><a data-target="products" data-i18n="nav_products">Products</a></li>
+    <li><a data-target="contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('tr')">TR</button>
+    <button class="lang-btn" onclick="setLang('ar')">AR</button>
+  </div>
+</nav>
+
+<section id="home" class="page-section active">
+  <div class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div>
+        <p class="hero-eyebrow" data-i18n="hero_eyebrow">Established in Istanbul, Turkey</p>
+        <h1 class="hero-title"><em data-i18n="hero_title_em">Panatolya</em><br><span data-i18n="hero_title_rest">Chemicals &amp; Pharmaceuticals</span></h1>
+        <p class="hero-desc" data-i18n="hero_desc">One of the leading raw material suppliers for pharmaceutical, food, cosmetics, veterinary and industrial sectors — bridging East with West through Istanbul.</p>
+        <button class="hero-cta" data-target="contact" data-i18n="hero_cta">Get in Touch →</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-block">
+          <div class="stat-num">20+</div>
+          <div class="stat-label" data-i18n="stat_years">Years Experience</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">10+</div>
+          <div class="stat-label" data-i18n="stat_countries">Countries Served</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">6</div>
+          <div class="stat-label" data-i18n="stat_sectors">Industry Sectors</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">3</div>
+          <div class="stat-label" data-i18n="stat_entities">Group Entities</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="industries">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-i18n="ind_eyebrow">Industries We Serve</p>
+        <h2 class="section-title" data-i18n="ind_title">Raw Material Supply Across Key Sectors</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="industry-grid">
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+          <div class="industry-name" data-i18n="ind_pharma">Pharmaceuticals</div>
+          <div class="industry-desc" data-i18n="ind_pharma_desc">APIs and raw materials for human pharmaceutical production</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 4a6 6 0 1 1-6 6 6 6 0 0 1 6-6z"/></svg></div>
+          <div class="industry-name" data-i18n="ind_food">Food Ingredients</div>
+          <div class="industry-desc" data-i18n="ind_food_desc">Certified food-grade chemicals and additives</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg></div>
+          <div class="industry-name" data-i18n="ind_cosm">Cosmetics</div>
+          <div class="industry-desc" data-i18n="ind_cosm_desc">High-quality cosmetic raw materials and formulation inputs</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+          <div class="industry-name" data-i18n="ind_vet">Veterinary &amp; Feed</div>
+          <div class="industry-desc" data-i18n="ind_vet_desc">Veterinary APIs and feed additives for animal health</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+          <div class="industry-name" data-i18n="ind_chem">Industrial Chemicals</div>
+          <div class="industry-desc" data-i18n="ind_chem_desc">Industrial chemicals and printing industry solutions</div>
+        </div>
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <div class="industry-name" data-i18n="ind_pack">Packaging Materials</div>
+          <div class="industry-desc" data-i18n="ind_pack_desc">Packaging solutions for pharmaceutical and food industries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-i18n="svc_eyebrow">What We Offer</p>
+        <h2 class="section-title" data-i18n="svc_title">Our Services</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="services-list">
+        <div class="service-item">
+          <div class="service-num">01</div>
+          <div class="service-name" data-i18n="svc1_name">Strategic Procurement &amp; Distribution</div>
+          <div class="service-desc" data-i18n="svc1_desc">End-to-end strategic sourcing and efficient distribution across the Middle East and beyond</div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">02</div>
+          <div class="service-name" data-i18n="svc2_name">Sourcing &amp; Supply of New Products</div>
+          <div class="service-desc" data-i18n="svc2_desc">Identifying and introducing new product lines from vetted global suppliers</div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">03</div>
+          <div class="service-name" data-i18n="svc3_name">Documentation</div>
+          <div class="service-desc" data-i18n="svc3_desc">Complete regulatory and technical documentation support for all supplied materials</div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">04</div>
+          <div class="service-name" data-i18n="svc4_name">Registration &amp; Support</div>
+          <div class="service-desc" data-i18n="svc4_desc">Regulatory registration guidance and ongoing compliance support in target markets</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="page-section">
+  <div class="about">
+    <div class="container">
+      <div class="section-header" style="text-align:left; margin-bottom:48px;">
+        <p class="section-eyebrow" data-i18n="about_eyebrow">Who We Are</p>
+        <h2 class="section-title" data-i18n="about_title">About Panatolya</h2>
+        <div class="divider" style="margin:20px 0 0;"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-i18n="about_p1">Panatolya — a short form of <strong>Pan-Anatolia</strong> — was established in <strong>2016 in Istanbul, Turkey</strong> as the International Division of Barakat Trading Co., bringing together over 20 years of experience in the trade and distribution of active pharmaceutical ingredients, chemicals, packaging materials and equipment.</p>
+          <p data-i18n="about_p2">We source raw materials and substances to the Middle East countries such as Turkey, Syria, Iraq, Saudi Arabia, Jordan, Lebanon and others — from worldwide reliable suppliers with whom we have established successful long-term partnerships.</p>
+          <p data-i18n="about_p3">We ensure strategic and high-performance sourcing through careful selection of materials and substances that fully conform to the applicable regulations. Our reliable quality assurance system forms the base for our successful partnership with customers and suppliers alike.</p>
+        </div>
+        <div>
+          <div class="about-info">
+            <div class="about-info-header">
+              <p data-i18n="about_card_eyebrow">Company Details</p>
+              <h3>Panatolya Chemicals &amp; Pharmaceuticals Co. Ltd</h3>
+            </div>
+            <div class="about-info-body">
+              <div class="info-row">
+                <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div>
+                  <div class="info-label" data-i18n="about_hq">Headquarters</div>
+                  <div class="info-value">Basaksehir, Istanbul, Turkey</div>
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                <div>
+                  <div class="info-label" data-i18n="about_est">Established</div>
+                  <div class="info-value">2016</div>
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                <div>
+                  <div class="info-label" data-i18n="about_markets">Markets Served</div>
+                  <div class="info-value">Middle East, Europe, Asia</div>
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <div>
+                  <div class="info-label" data-i18n="about_group">Group</div>
+                  <div class="info-value" data-i18n="about_group_val">Barakat Trading Co. Group</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vision" class="page-section">
+  <div class="vision">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-i18n="vis_eyebrow">Our Direction</p>
+        <h2 class="section-title" data-i18n="vis_title">Mission &amp; Vision</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="vision-grid">
+        <div class="vision-card mission">
+          <div class="vision-tag" data-i18n="vis_mission_tag">Mission</div>
+          <h3 data-i18n="vis_mission_title">Total Customer Satisfaction</h3>
+          <p data-i18n="vis_mission_text">To attain total customer satisfaction through continual offering of premium quality products, attractively competitive prices and timely delivery, with the objective to continuously optimize our services.</p>
+        </div>
+        <div class="vision-card">
+          <div class="vision-tag" data-i18n="vis_vision_tag">Vision</div>
+          <h3 data-i18n="vis_vision_title">Bridging East &amp; West</h3>
+          <p data-i18n="vis_vision_text">To become an international first-class distributor of chemicals and pharmaceutical raw materials, bridging East with West through the metropolitan bi-continental hub of Istanbul.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="group" class="page-section">
+  <div class="group">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-i18n="grp_eyebrow">Group Organization</p>
+        <h2 class="section-title" data-i18n="grp_title">Our Company Network</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="companies-grid">
+        <div class="company-card">
+          <div class="company-card-header">
+            <div class="company-flag">🇹🇷</div>
+            <h3>Panatolya Chemicals &amp; Pharmaceuticals</h3>
+            <div class="company-type" data-i18n="grp_main_type">Main Company</div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-location">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Basaksehir, Istanbul, Turkey
+            </div>
+            <p data-i18n="grp_main_desc">Conducting inter-trade of raw materials from and to Turkey. Supplying high-quality Turkish products to Middle Eastern countries and Europe, and vice versa. Also handling in-transit business through Turkey to neighbouring countries.</p>
+          </div>
+        </div>
+        <div class="company-card">
+          <div class="company-card-header">
+            <div class="company-flag">🇸🇾</div>
+            <h3>Barakat Trading Co.</h3>
+            <div class="company-type" data-i18n="grp_sister_type">Sister Company</div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-location">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Azizieh, Aleppo, Syria
+            </div>
+            <p data-i18n="grp_sister_desc">Started in 1999, a well-known reliable supplier of pharmaceuticals and chemicals to the Syrian market and surrounding countries. Wide experience in food chemicals, cosmetic and pharma raw materials, plus machinery and equipment for printing, textile and paper industries.</p>
+          </div>
+        </div>
+        <div class="company-card">
+          <div class="company-card-header">
+            <div class="company-flag">🇮🇶</div>
+            <h3>Panacea Life Co.</h3>
+            <div class="company-type" data-i18n="grp_assoc_type">Associate Company</div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-location">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Italian Village, Erbil, Iraq
+            </div>
+            <p data-i18n="grp_assoc_desc">Supplying finished products and APIs for the human pharmaceutical industry and chemicals for various industries in Iraq. Major supplier for public sector tenders. Distribution and storage warehouses in 5 major cities across Iraq.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="page-section">
+  <div class="products">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-i18n="prod_eyebrow">Our Portfolio</p>
+        <h2 class="section-title" data-i18n="prod_title">Products &amp; Materials</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="product-pills">
+        <span class="pill" data-i18n="prod_1">Pharmaceutical APIs</span>
+        <span class="pill" data-i18n="prod_2">Pharmaceutical Raw Materials</span>
+        <span class="pill" data-i18n="prod_3">Food Ingredients</span>
+        <span class="pill" data-i18n="prod_4">Food Additives</span>
+        <span class="pill" data-i18n="prod_5">Industrial Chemicals</span>
+        <span class="pill" data-i18n="prod_6">Packaging Materials</span>
+        <span class="pill" data-i18n="prod_7">Machines &amp; Equipment</span>
+        <span class="pill" data-i18n="prod_8">Veterinary APIs</span>
+        <span class="pill" data-i18n="prod_9">Feed Additives</span>
+        <span class="pill" data-i18n="prod_10">Cosmetic Raw Materials</span>
+        <span class="pill" data-i18n="prod_11">Printing Chemicals</span>
+        <span class="pill" data-i18n="prod_12">Excipients</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="page-section">
+  <div class="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <h2 data-i18n="con_title">Get In Touch</h2>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="contact-detail-content">
+              <p data-i18n="con_addr_label">Address</p>
+              <p>Basaksehir, Istanbul, Turkey</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div class="contact-detail-content">
+              <p data-i18n="con_email_label">Email</p>
+              <a href="mailto:info@panatolya.com">info@panatolya.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-area">
+          <p data-i18n="con_desc">We welcome inquiries from potential partners, customers, and suppliers worldwide. Reach out to us for product information, pricing, or partnership opportunities.</p>
+          <div class="contact-links">
+            <a href="mailto:info@panatolya.com" class="contact-link-btn">
+              <svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.5;width:16px;height:16px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span data-i18n="con_email_btn">Send us an Email</span>
+            </a>
+            <a href="https://www.linkedin.com/company/panatolya-kimya-ve-i%CC%87la%C3%A7/" target="_blank" class="contact-link-btn">
+              <svg viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span data-i18n="con_linkedin_btn">Connect on LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="images/panatolya_logo.png" alt="Panatolya" onerror="this.style.display='none'">
+  <p data-i18n="footer_copy">© 2026 Panatolya Chemicals & Pharmaceuticals Co. Ltd — Istanbul, Turkey</p>
+</footer>
+
+<script>
+const translations = {
+  en: {
+    nav_home: "Home", nav_about: "About Us", nav_vision: "Vision",
+    nav_group: "Group", nav_products: "Products", nav_contact: "Contact",
+    hero_eyebrow: "Established in Istanbul, Turkey",
+    hero_title_em: "Panatolya", hero_title_rest: "Chemicals & Pharmaceuticals",
+    hero_desc: "One of the leading raw material suppliers for pharmaceutical, food, cosmetics, veterinary and industrial sectors — bridging East with West through Istanbul.",
+    hero_cta: "Get in Touch →",
+    stat_years: "Years Experience", stat_countries: "Countries Served",
+    stat_sectors: "Industry Sectors", stat_entities: "Group Entities",
+    ind_eyebrow: "Industries We Serve",
+    ind_title: "Raw Material Supply Across Key Sectors",
+    ind_pharma: "Pharmaceuticals", ind_pharma_desc: "APIs and raw materials for human pharmaceutical production",
+    ind_food: "Food Ingredients", ind_food_desc: "Certified food-grade chemicals and additives",
+    ind_cosm: "Cosmetics", ind_cosm_desc: "High-quality cosmetic raw materials and formulation inputs",
+    ind_vet: "Veterinary & Feed", ind_vet_desc: "Veterinary APIs and feed additives for animal health",
+    ind_chem: "Industrial Chemicals", ind_chem_desc: "Industrial chemicals and printing industry solutions",
+    ind_pack: "Packaging Materials", ind_pack_desc: "Packaging solutions for pharmaceutical and food industries",
+    svc_eyebrow: "What We Offer", svc_title: "Our Services",
+    svc1_name: "Strategic Procurement & Distribution", svc1_desc: "End-to-end strategic sourcing and efficient distribution across the Middle East and beyond",
+    svc2_name: "Sourcing & Supply of New Products", svc2_desc: "Identifying and introducing new product lines from vetted global suppliers",
+    svc3_name: "Documentation", svc3_desc: "Complete regulatory and technical documentation support for all supplied materials",
+    svc4_name: "Registration & Support", svc4_desc: "Regulatory registration guidance and ongoing compliance support in target markets",
+    about_eyebrow: "Who We Are", about_title: "About Panatolya",
+    about_p1: "Panatolya — a short form of Pan-Anatolia — was established in 2016 in Istanbul, Turkey as the International Division of Barakat Trading Co., bringing together over 20 years of experience in the trade and distribution of active pharmaceutical ingredients, chemicals, packaging materials and equipment.",
+    about_p2: "We source raw materials and substances to the Middle East countries such as Turkey, Syria, Iraq, Saudi Arabia, Jordan, Lebanon and others — from worldwide reliable suppliers with whom we have established successful long-term partnerships.",
+    about_p3: "We ensure strategic and high-performance sourcing through careful selection of materials that fully conform to applicable regulations. Our reliable quality assurance system forms the base for our successful partnership with customers and suppliers.",
+    about_card_eyebrow: "Company Details",
+    about_hq: "Headquarters", about_est: "Established",
+    about_markets: "Markets Served", about_group: "Group",
+    about_group_val: "Barakat Trading Co. Group",
+    vis_eyebrow: "Our Direction", vis_title: "Mission & Vision",
+    vis_mission_tag: "Mission", vis_mission_title: "Total Customer Satisfaction",
+    vis_mission_text: "To attain total customer satisfaction through continual offering of premium quality products, attractively competitive prices and timely delivery, with the objective to continuously optimize our services.",
+    vis_vision_tag: "Vision", vis_vision_title: "Bridging East & West",
+    vis_vision_text: "To become an international first-class distributor of chemicals and pharmaceutical raw materials, bridging East with West through the metropolitan bi-continental hub of Istanbul.",
+    grp_eyebrow: "Group Organization", grp_title: "Our Company Network",
+    grp_main_type: "Main Company",
+    grp_main_desc: "Conducting inter-trade of raw materials from and to Turkey. Supplying high-quality Turkish products to Middle Eastern countries and Europe, and vice versa. Also handling in-transit business through Turkey to neighbouring countries.",
+    grp_sister_type: "Sister Company",
+    grp_sister_desc: "Started in 1999, a well-known reliable supplier of pharmaceuticals and chemicals to the Syrian market and surrounding countries. Wide experience in food chemicals, cosmetic and pharma raw materials, plus machinery and equipment for printing, textile and paper industries.",
+    grp_assoc_type: "Associate Company",
+    grp_assoc_desc: "Supplying finished products and APIs for the human pharmaceutical industry and chemicals for various industries in Iraq. Major supplier for public sector tenders. Distribution and storage warehouses in 5 major cities across Iraq.",
+    prod_eyebrow: "Our Portfolio", prod_title: "Products & Materials",
+    prod_1: "Pharmaceutical APIs", prod_2: "Pharmaceutical Raw Materials",
+    prod_3: "Food Ingredients", prod_4: "Food Additives",
+    prod_5: "Industrial Chemicals", prod_6: "Packaging Materials",
+    prod_7: "Machines & Equipment", prod_8: "Veterinary APIs",
+    prod_9: "Feed Additives", prod_10: "Cosmetic Raw Materials",
+    prod_11: "Printing Chemicals", prod_12: "Excipients",
+    con_title: "Get In Touch",
+    con_addr_label: "Address", con_email_label: "Email",
+    con_desc: "We welcome inquiries from potential partners, customers, and suppliers worldwide. Reach out to us for product information, pricing, or partnership opportunities.",
+    con_email_btn: "Send us an Email", con_linkedin_btn: "Connect on LinkedIn",
+    footer_copy: "© 2026 Panatolya Chemicals & Pharmaceuticals Co. Ltd — Istanbul, Turkey"
+  },
+
+  tr: {
+    nav_home: "Ana Sayfa", nav_about: "Hakkımızda", nav_vision: "Vizyon",
+    nav_group: "Grup", nav_products: "Ürünler", nav_contact: "İletişim",
+    hero_eyebrow: "İstanbul, Türkiye'de Kuruldu",
+    hero_title_em: "Panatolya", hero_title_rest: "Kimya ve İlaç",
+    hero_desc: "Farmasötik, gıda, kozmetik, veteriner ve endüstriyel sektörler için önde gelen hammadde tedarikçilerinden biri — İstanbul aracılığıyla Doğu ile Batıyı buluşturuyor.",
+    hero_cta: "Bize Ulaşın →",
+    stat_years: "Yıllık Deneyim", stat_countries: "Hizmet Verilen Ülke",
+    stat_sectors: "Endüstri Sektörü", stat_entities: "Grup Şirketi",
+    ind_eyebrow: "Hizmet Verdiğimiz Sektörler",
+    ind_title: "Kilit Sektörlere Hammadde Tedariki",
+    ind_pharma: "İlaç", ind_pharma_desc: "İnsan ilaç üretimi için API ve hammaddeler",
+    ind_food: "Gıda Bileşenleri", ind_food_desc: "Sertifikalı gıda kalitesinde kimyasallar ve katkılar",
+    ind_cosm: "Kozmetik", ind_cosm_desc: "Yüksek kaliteli kozmetik hammaddeler",
+    ind_vet: "Veteriner & Yem", ind_vet_desc: "Hayvan sağlığı için veteriner API'leri ve yem katkıları",
+    ind_chem: "Endüstriyel Kimyasallar", ind_chem_desc: "Endüstriyel kimyasallar ve matbaa sektörü çözümleri",
+    ind_pack: "Ambalaj Malzemeleri", ind_pack_desc: "Farmasötik ve gıda sektörleri için ambalaj çözümleri",
+    svc_eyebrow: "Neler Sunuyoruz", svc_title: "Hizmetlerimiz",
+    svc1_name: "Stratejik Tedarik ve Dağıtım", svc1_desc: "Orta Doğu ve ötesinde uçtan uca stratejik tedarik ve verimli dağıtım",
+    svc2_name: "Yeni Ürün Temini ve Tedariki", svc2_desc: "Güvenilir küresel tedarikçilerden yeni ürün hatları belirleme ve sunma",
+    svc3_name: "Dokümantasyon", svc3_desc: "Tedarik edilen tüm materyaller için tam düzenleyici ve teknik dokümantasyon desteği",
+    svc4_name: "Kayıt ve Destek", svc4_desc: "Hedef pazarlarda düzenleyici kayıt rehberliği ve süregelen uyum desteği",
+    about_eyebrow: "Biz Kimiz", about_title: "Panatolya Hakkında",
+    about_p1: "Panatolya — Pan-Anadolu'nun kısa formu — 2016 yılında İstanbul, Türkiye'de Barakat Trading Co.'nun Uluslararası Bölümü olarak kurulmuş; aktif farmasötik bileşikler, kimyasallar, ambalaj malzemeleri ve ekipman ticareti ve dağıtımında 20 yılı aşkın deneyimi bir araya getirmektedir.",
+    about_p2: "Türkiye, Suriye, Irak, Suudi Arabistan, Ürdün, Lübnan ve diğer Orta Doğu ülkelerine, başarılı uzun vadeli ortaklıklar kurduğumuz dünya genelindeki güvenilir tedarikçilerden hammadde ve maddeler temin ediyoruz.",
+    about_p3: "İlgili mevzuata tam olarak uyan malzemelerin özenle seçilmesiyle stratejik ve yüksek performanslı tedarik sağlıyoruz. Güvenilir kalite güvence sistemimiz, müşteriler ve tedarikçilerle başarılı ortaklığımızın temelidir.",
+    about_card_eyebrow: "Şirket Bilgileri",
+    about_hq: "Merkez", about_est: "Kuruluş",
+    about_markets: "Hizmet Piyasaları", about_group: "Grup",
+    about_group_val: "Barakat Trading Co. Grubu",
+    vis_eyebrow: "Yönümüz", vis_title: "Misyon ve Vizyon",
+    vis_mission_tag: "Misyon", vis_mission_title: "Tam Müşteri Memnuniyeti",
+    vis_mission_text: "Premium kaliteli ürünler, rekabetçi fiyatlar ve zamanında teslimat sunarak hizmetlerimizi sürekli optimize etme hedefiyle tam müşteri memnuniyetine ulaşmak.",
+    vis_vision_tag: "Vizyon", vis_vision_title: "Doğu ile Batıyı Buluşturmak",
+    vis_vision_text: "İstanbul'un kıtalararası metropolitan merkezi aracılığıyla Doğu ile Batıyı buluşturan uluslararası birinci sınıf bir kimyasal ve farmasötik hammadde distribütörü olmak.",
+    grp_eyebrow: "Grup Organizasyonu", grp_title: "Şirket Ağımız",
+    grp_main_type: "Ana Şirket",
+    grp_main_desc: "Türkiye'den ve Türkiye'ye hammadde ticareti yapma. Türkiye'de üretilen yüksek kaliteli ürünleri Orta Doğu ve Avrupa'ya, talepleri ise onaylı tedarikçilerimizden Türkiye pazarına sunma. Ayrıca Türkiye üzerinden komşu ülkelere transit ticaret.",
+    grp_sister_type: "Kardeş Şirket",
+    grp_sister_desc: "1999 yılında Halep'te kurulan, Suriye pazarına ve komşu ülkelere ilaç ve kimyasal tedarikinde tanınan güvenilir bir tedarikçi. Gıda kimyasalları, kozmetik ve farma hammaddeleri ile matbaa, tekstil ve kağıt sektörleri için makine ve ekipman alanında geniş deneyim.",
+    grp_assoc_type: "Bağlı Şirket",
+    grp_assoc_desc: "Irak'ta insan ilaç endüstrisi için bitmiş ürün ve API'ler ile çeşitli sektörlere kimyasal tedariki. Kamu sektörü ihalelerinde büyük tedarikçi. Irak'ın 5 büyük şehrinde dağıtım ve depolama tesisleri.",
+    prod_eyebrow: "Portföyümüz", prod_title: "Ürünler ve Malzemeler",
+    prod_1: "Farmasötik API'ler", prod_2: "Farmasötik Hammaddeler",
+    prod_3: "Gıda Bileşenleri", prod_4: "Gıda Katkıları",
+    prod_5: "Endüstriyel Kimyasallar", prod_6: "Ambalaj Malzemeleri",
+    prod_7: "Makine ve Ekipmanlar", prod_8: "Veteriner API'leri",
+    prod_9: "Yem Katkıları", prod_10: "Kozmetik Hammaddeler",
+    prod_11: "Matbaa Kimyasalları", prod_12: "Eksipiyanlar",
+    con_title: "Bize Ulaşın",
+    con_addr_label: "Adres", con_email_label: "E-posta",
+    con_desc: "Dünya genelindeki potansiyel ortaklar, müşteriler ve tedarikçilerden gelen sorgulamaları memnuniyetle karşılıyoruz. Ürün bilgisi, fiyatlandırma veya ortaklık fırsatları için bize ulaşın.",
+    con_email_btn: "E-posta Gönderin", con_linkedin_btn: "LinkedIn'de Bağlanın",
+    footer_copy: "© 2026 Panatolya Kimya ve İlaç Dış Tic. Ltd. Şti. — İstanbul, Türkiye"
+  },
+
+  ar: {
+    nav_home: "الرئيسية", nav_about: "من نحن", nav_vision: "الرؤية",
+    nav_group: "المجموعة", nav_products: "المنتجات", nav_contact: "اتصل بنا",
+    hero_eyebrow: "تأسست في إسطنبول، تركيا",
+    hero_title_em: "باناتوليا", hero_title_rest: "للكيماويات والأدوية",
+    hero_desc: "من أبرز موردي المواد الأولية لقطاعات الأدوية والغذاء ومستحضرات التجميل والبيطرة والصناعة — تجمع بين الشرق والغرب عبر إسطنبول.",
+    hero_cta: "تواصل معنا ←",
+    stat_years: "سنوات خبرة", stat_countries: "دول مخدومة",
+    stat_sectors: "قطاعات صناعية", stat_entities: "كيانات المجموعة",
+    ind_eyebrow: "القطاعات التي نخدمها",
+    ind_title: "توريد المواد الأولية عبر القطاعات الرئيسية",
+    ind_pharma: "الأدوية", ind_pharma_desc: "مواد فعالة وخام لتصنيع الأدوية البشرية",
+    ind_food: "مكونات الغذاء", ind_food_desc: "مواد كيميائية ومضافات غذائية معتمدة",
+    ind_cosm: "مستحضرات التجميل", ind_cosm_desc: "مواد أولية عالية الجودة لمستحضرات التجميل",
+    ind_vet: "البيطرة والأعلاف", ind_vet_desc: "مواد فعالة بيطرية ومضافات للأعلاف",
+    ind_chem: "الكيماويات الصناعية", ind_chem_desc: "كيماويات صناعية وحلول لصناعة الطباعة",
+    ind_pack: "مواد التعبئة والتغليف", ind_pack_desc: "حلول تغليف لقطاعي الأدوية والغذاء",
+    svc_eyebrow: "ما نقدمه", svc_title: "خدماتنا",
+    svc1_name: "الشراء الاستراتيجي والتوزيع", svc1_desc: "تزويد شامل واستراتيجي وتوزيع فعّال في الشرق الأوسط وخارجه",
+    svc2_name: "التوريد والتزويد بمنتجات جديدة", svc2_desc: "تحديد وتقديم خطوط منتجات جديدة من موردين عالميين موثوقين",
+    svc3_name: "التوثيق", svc3_desc: "دعم كامل للوثائق التنظيمية والتقنية لجميع المواد المورّدة",
+    svc4_name: "التسجيل والدعم", svc4_desc: "توجيه في تسجيل المواد لدى الجهات التنظيمية ودعم مستمر للامتثال",
+    about_eyebrow: "من نحن", about_title: "عن باناتوليا",
+    about_p1: "باناتوليا — اختصار لـ Pan-Anatolia — تأسست عام 2016 في إسطنبول، تركيا، بوصفها الذراع الدولي لشركة بركات للتجارة، حاملةً خبرة تتجاوز 20 عاماً في تجارة وتوزيع المواد الصيدلانية الفعّالة والكيماويات ومواد التعبئة والمعدات.",
+    about_p2: "نوفّر المواد الأولية لدول الشرق الأوسط كتركيا وسوريا والعراق والمملكة العربية السعودية والأردن ولبنان وغيرها، من موردين عالميين موثوقين أقمنا معهم شراكات طويلة الأمد ناجحة.",
+    about_p3: "نضمن تزويداً استراتيجياً وعالي الأداء من خلال اختيار دقيق للمواد المطابقة للأنظمة المعمول بها. نظامنا الموثوق لضمان الجودة هو أساس شراكتنا الناجحة مع العملاء والموردين.",
+    about_card_eyebrow: "بيانات الشركة",
+    about_hq: "المقر الرئيسي", about_est: "سنة التأسيس",
+    about_markets: "الأسواق المخدومة", about_group: "المجموعة",
+    about_group_val: "مجموعة بركات للتجارة",
+    vis_eyebrow: "توجهنا", vis_title: "المهمة والرؤية",
+    vis_mission_tag: "المهمة", vis_mission_title: "الرضا التام للعملاء",
+    vis_mission_text: "تحقيق الرضا التام للعملاء من خلال التقديم المستمر لمنتجات فائقة الجودة بأسعار تنافسية جذابة وتسليم في الوقت المحدد، بهدف تحسين خدماتنا باستمرار.",
+    vis_vision_tag: "الرؤية", vis_vision_title: "جسر بين الشرق والغرب",
+    vis_vision_text: "أن نصبح موزعاً دولياً من الدرجة الأولى للكيماويات والمواد الأولية الصيدلانية، نربط الشرق بالغرب عبر إسطنبول مركزاً قارياً مزدوجاً.",
+    grp_eyebrow: "هيكل المجموعة", grp_title: "شبكة شركاتنا",
+    grp_main_type: "الشركة الرئيسية",
+    grp_main_desc: "إجراء تجارة المواد الخام من تركيا وإليها. توريد المنتجات التركية عالية الجودة لدول الشرق الأوسط وأوروبا، وتلبية احتياجات السوق التركية من موردينا المعتمدين. إضافةً إلى التجارة العابرة عبر تركيا إلى الدول المجاورة.",
+    grp_sister_type: "الشركة الشقيقة",
+    grp_sister_desc: "تأسست عام 1999 في حلب، وهي مورد موثوق ومعروف للأدوية والكيماويات للسوق السورية والدول المجاورة. خبرة واسعة في الكيماويات الغذائية ومواد التجميل والمواد الأولية الصيدلانية، فضلاً عن قسم متخصص للآلات والمعدات.",
+    grp_assoc_type: "شركة مشاركة",
+    grp_assoc_desc: "توريد منتجات نهائية ومواد فعّالة لقطاع الأدوية البشرية وكيماويات للصناعات المختلفة في العراق. مورد رئيسي للقطاع الحكومي. مستودعات توزيع وتخزين في 5 مدن رئيسية بالعراق.",
+    prod_eyebrow: "محفظتنا", prod_title: "المنتجات والمواد",
+    prod_1: "مواد صيدلانية فعّالة", prod_2: "مواد أولية صيدلانية",
+    prod_3: "مكونات غذائية", prod_4: "مضافات غذائية",
+    prod_5: "كيماويات صناعية", prod_6: "مواد تعبئة وتغليف",
+    prod_7: "آلات ومعدات", prod_8: "مواد فعّالة بيطرية",
+    prod_9: "مضافات الأعلاف", prod_10: "مواد أولية تجميلية",
+    prod_11: "كيماويات الطباعة", prod_12: "سواغات",
+    con_title: "تواصل معنا",
+    con_addr_label: "العنوان", con_email_label: "البريد الإلكتروني",
+    con_desc: "نرحب باستفسارات الشركاء والعملاء والموردين المحتملين حول العالم. تواصل معنا للحصول على معلومات المنتجات أو الأسعار أو فرص الشراكة.",
+    con_email_btn: "أرسل لنا بريداً إلكترونياً", con_linkedin_btn: "تواصل عبر لينكد إن",
+    footer_copy: "© 2026 باناتوليا للكيماويات والأدوية — إسطنبول، تركيا"
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  const isAr = lang === 'ar';
+  document.body.setAttribute('lang', lang);
+  document.body.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+  document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+}
+
+// Single Page Application logic for Navigation Tabs
+const navTriggers = document.querySelectorAll('[data-target]');
+const sections = document.querySelectorAll('.page-section');
+
+navTriggers.forEach(trigger => {
+  trigger.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = trigger.getAttribute('data-target');
+
+    // Remove active state from all sections and nav links
+    sections.forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+
+    // Add active state to targeted section
+    const targetSection = document.getElementById(targetId);
+    if(targetSection) targetSection.classList.add('active');
+
+    // Add active state to nav link if the trigger was a navigation item
+    if(trigger.tagName === 'A' && trigger.closest('.nav-links')) {
+      trigger.classList.add('active');
+    } else {
+        // if trigger is the Hero Button or Brand logo, ensure correct nav link is highlighted
+        const correspondingNavLink = document.querySelector(`.nav-links a[data-target="${targetId}"]`);
+        if(correspondingNavLink) correspondingNavLink.classList.add('active');
+    }
+    
+    // scroll back to top of the page upon view change
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
